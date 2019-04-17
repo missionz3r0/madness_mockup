@@ -18,7 +18,6 @@
     }
 
     .chatMessage {
-      font-family: "Comic Sans MS";
       margin: auto;
       padding-bottom: 2px;
       padding-left: 5%;
@@ -31,17 +30,12 @@
       font-weight: bold;
     }
 
-    .chatMessageText{
-      color: black;
-    }
-
     .chatMessages {
       height: 85%;
       width: 100%
     }
 
     .chatWindow {
-      background-color: rgb(245, 245, 220);
       height: 100vh;
       position: fixed;
       right: 0px;
@@ -66,8 +60,6 @@
     }
 
     .slideoutButton{
-      background-color: black;
-      color: white;
       cursor: pointer;
       left: 0vw;
       top: 50%;
@@ -77,12 +69,7 @@
     }
 
     .slideout{
-      background: rgb(245, 245, 220);
-      box-shadow:inset 0px 0px 0px 5px black;
-      -webkit-box-shadow:inset 0px 0px 0px 5px black;
-      -moz-box-shadow:inset 0px 0px 0px 5px black;
       display: none;
-      font-family: "Comic Sans MS";
       height: 100vh;
       left: 0px;
       position: fixed;
@@ -128,6 +115,7 @@
     }
   </style>
 
+  <link rel="stylesheet" href="css/dark.css" id="theme">
 </head>
 
 <body>
@@ -135,9 +123,9 @@
   <div id="slideout" class="slideout">
     <div class="slideoutContent">
       <div class="tab">
-        <button class="tablinks" onclick="openCity(event, 'Journal')">Journal</button>
-        <button class="tablinks" onclick="openCity(event, 'Rooms')">Rooms</button>
-        <button class="tablinks" onclick="openCity(event, 'Settings')">Settings</button>
+        <button class="tablinks" onclick="openTab(event, 'Journal')">Journal</button>
+        <button class="tablinks" onclick="openTab(event, 'Rooms')">Rooms</button>
+        <button class="tablinks" onclick="openTab(event, 'Settings')">Settings</button>
       </div>
 
       <!-- Tab content -->
@@ -150,7 +138,12 @@
       </div>
 
       <div id="Settings" class="tabcontent">
-        <p>This is where user settings will be.</p>
+        Theme:
+        <select id="themeSwitch">
+            <option value="dark">Dark</option>
+            <option value="light">Light</option>
+            <option value="sepia">Sepia</option>
+        </select>
       </div>
     </div>
   </div>
@@ -160,13 +153,13 @@
   <div class="chatWindow">
     <div class="chatMessages">
       <p class="chatMessage">
-        <span class="chatMessageTitle" style="color: Blue;">Software Nerd</span>:<br>This is where chat messages will be!
+        <span class="chatMessageTitle" style="color: Blue;">Software Nerd:</span><br><span class='chatMessageText'>This is where chat messages will be!</span>
       </p>
       <p class="chatMessage">
-        <span class="chatMessageTitle" style="color: #E75480;">Writing Nerd</span>:<br>Here's another message!
+        <span class="chatMessageTitle" style="color: #E75480;">Writing Nerd:</span><br><span class='chatMessageText'>Here's another message!</span>
       </p>
       <p class="chatMessage">
-        <span class="chatMessageTitle" style="color: #B19CD9;">Logistics Nerd</span>:<br>Here's a third message!
+        <span class="chatMessageTitle" style="color: #B19CD9;">Logistics Nerd:</span><br><span class='chatMessageText'>Here's a third message!</span>
       </p>
     </div>
     <textarea class="chatInput" placeholder="This is where chat input will be!"></textarea>
@@ -193,7 +186,7 @@ function toggleSlideout(){
   }
 }
 
-function openCity(evt, cityName) {
+function openTab(evt, cityName) {
   // Declare all variables
   var i, tabcontent, tablinks;
 
@@ -213,4 +206,22 @@ function openCity(evt, cityName) {
   document.getElementById(cityName).style.display = "block";
   evt.currentTarget.className += " active";
 }
+
+document.getElementById('themeSwitch').onchange = function() {
+  let value = this.value;
+
+  switch(value){
+    case "dark":
+      document.getElementById('theme').href = "css/dark.css";
+      break;
+    case "light":
+      document.getElementById('theme').href = "css/light.css";
+      break;
+    case "sepia":
+      document.getElementById('theme').href = "css/sepia.css";
+      break;
+    default:
+      document.getElementById('theme').href = "css/dark.css";
+  }
+};
 </script>
