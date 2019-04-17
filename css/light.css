@@ -1,0 +1,20 @@
+.chatMessageText{
+  color: black;
+}
+
+.chatWindow {
+  background-color: white;
+}
+
+.slideoutButton{
+  background-color: black;
+  color: white;
+}
+
+.slideout{
+  background: white;
+  box-shadow:inset 0px 0px 0px 5px black;
+  -webkit-box-shadow:inset 0px 0px 0px 5px black;
+  -moz-box-shadow:inset 0px 0px 0px 5px black;
+  color: black;
+}
