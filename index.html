@@ -1,0 +1,100 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+
+  <title>Madness Tabletop - Mockup</title>
+  <meta name="description" content="A tabletop made by a few mad people that want something better.">
+  <meta name="author" content="Missionz3r0">
+
+  <style>
+    .chatInput {
+      bottom: 0px;
+      height: 15%;
+      position: fixed;
+      width: 100%;
+      z-index: 2;
+    }
+
+    .chatMessage {
+      border: solid;
+      border-radius: 25px;
+      margin: auto;
+      padding: 5%;
+      width: 85%;
+    }
+
+    .chatMessages {
+      border: solid;
+      height: 85%;
+      width: 100%
+    }
+
+    .chatWindow {
+      height: 100vh;
+      position: fixed;
+      right: 5px;
+      top: 0px;
+      width: 20vw;
+      z-index: 2;
+    }
+
+    .map {
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .mapWindow{
+      height: 100vh;
+      left: 0px;
+      overflow-y: scroll;
+      position: fixed;
+      width: 80vw;
+    }
+
+    .slideoutButton{
+      background-color: black;
+      color: white;
+      cursor: pointer;
+      left: 0px;
+      top: 50%;
+      padding: 5px;
+      position: fixed;
+      z-index: 2;
+    }
+
+    .slideout{
+
+    }
+  </style>
+
+</head>
+
+<body>
+  <input class="slideoutButton" type="button" onclick="toggleSlideout()" value=">">
+  <div class="slideout">
+  </div>
+  <div class="mapWindow">
+    <img id="map" class="map" src="https://cdn.discordapp.com/attachments/474415967745867777/555904974647721984/The_Temple_of_Migo_the_Fiendish_01_player.jpg">
+  </div>
+  <div class="chatWindow">
+    <div class="chatMessages">
+      <p class="chatMessage">
+        This is where chat messages will be!
+      </p>
+      <p class="chatMessage">
+        Here's another message!
+      </p>
+    </div>
+    <textarea class="chatInput" placeholder="This is where chat input will be!"></textarea>
+  </div>
+</body>
+</html>
+
+<script>
+function toggleSlideout(){
+  console.log("hello");
+}
+</script>
