@@ -44,7 +44,7 @@
       background-color: rgb(245, 245, 220);
       height: 100vh;
       position: fixed;
-      right: 5px;
+      right: 0px;
       top: 0px;
       width: 20vw;
       z-index: 2;
@@ -77,12 +77,54 @@
     }
 
     .slideout{
-      background: rgba(128,128,128,1);
+      background: rgb(245, 245, 220);
+      box-shadow:inset 0px 0px 0px 5px black;
+      -webkit-box-shadow:inset 0px 0px 0px 5px black;
+      -moz-box-shadow:inset 0px 0px 0px 5px black;
+      display: none;
+      font-family: "Comic Sans MS";
       height: 100vh;
-      left: -80vw;
+      left: 0px;
       position: fixed;
-      width: 80vw;
+      top: 0px;
+      width: 33vw;
       z-index: 2;
+    }
+
+    .slideoutContent{
+      padding: 5px;
+    }
+
+    /* Style the tab */
+    .tab {
+      overflow: hidden;
+    }
+
+    /* Style the buttons that are used to open the tab content */
+    .tab button {
+      background-color: inherit;
+      float: left;
+      border: none;
+      outline: none;
+      cursor: pointer;
+      padding: 14px 16px;
+      transition: 0.3s;
+    }
+
+    /* Change background color of buttons on hover */
+    .tab button:hover {
+      background-color: #ddd;
+    }
+
+    /* Create an active/current tablink class */
+    .tab button.active {
+      background-color: #ccc;
+    }
+
+    /* Style the tab content */
+    .tabcontent {
+      display: none;
+      margin: 5px;
     }
   </style>
 
@@ -91,6 +133,26 @@
 <body>
   <input id="slideoutButton" class="slideoutButton" type="button" onclick="toggleSlideout()" value=">">
   <div id="slideout" class="slideout">
+    <div class="slideoutContent">
+      <div class="tab">
+        <button class="tablinks" onclick="openCity(event, 'Journal')">Journal</button>
+        <button class="tablinks" onclick="openCity(event, 'Rooms')">Rooms</button>
+        <button class="tablinks" onclick="openCity(event, 'Settings')">Settings</button>
+      </div>
+
+      <!-- Tab content -->
+      <div id="Journal" class="tabcontent">
+        <p>This is the Journal</p>
+      </div>
+
+      <div id="Rooms" class="tabcontent">
+        <p>This is where the list of rooms will be.</p>
+      </div>
+
+      <div id="Settings" class="tabcontent">
+        <p>This is where user settings will be.</p>
+      </div>
+    </div>
   </div>
   <div class="mapWindow">
     <img id="map" class="map" src="https://cdn.discordapp.com/attachments/474415967745867777/555904974647721984/The_Temple_of_Migo_the_Fiendish_01_player.jpg">
@@ -118,16 +180,37 @@ function toggleSlideout(){
   let slideoutButton = document.getElementById("slideoutButton");
   let buttonPosition = slideoutButton.style.left;
   let slideout = document.getElementById("slideout");
-  let position = slideout.style.left;
+  let display = slideout.style.display;
 
-  if(position === '0vw'){
-    slideout.style.left = '-80vw';
+  if(display === 'block'){
+    slideout.style.display = 'none';
     slideoutButton.style.left = '0vw';
     slideoutButton.value = '>';
   }else{
-    slideout.style.left = '0vw';
-    slideoutButton.style.left = '80vw';
+    slideout.style.display = 'block';
+    slideoutButton.style.left = '33vw';
     slideoutButton.value = '<';
   }
+}
+
+function openCity(evt, cityName) {
+  // Declare all variables
+  var i, tabcontent, tablinks;
+
+  // Get all elements with class="tabcontent" and hide them
+  tabcontent = document.getElementsByClassName("tabcontent");
+  for (i = 0; i < tabcontent.length; i++) {
+    tabcontent[i].style.display = "none";
+  }
+
+  // Get all elements with class="tablinks" and remove the class "active"
+  tablinks = document.getElementsByClassName("tablinks");
+  for (i = 0; i < tablinks.length; i++) {
+    tablinks[i].className = tablinks[i].className.replace(" active", "");
+  }
+
+  // Show the current tab, and add an "active" class to the button that opened the tab
+  document.getElementById(cityName).style.display = "block";
+  evt.currentTarget.className += " active";
 }
 </script>
