@@ -1,0 +1,28 @@
+body{
+  background-color: rgb(245, 245, 220);
+}
+
+.chatMessage {
+  font-family: "Comic Sans MS";
+}
+
+.chatMessageText{
+  color: black;
+}
+
+.chatWindow {
+  background-color: rgb(245, 245, 220);
+}
+
+.slideoutButton{
+  background-color: black;
+  color: white;
+}
+
+.slideout{
+  background: rgb(245, 245, 220);
+  box-shadow:inset 0px 0px 0px 5px black;
+  -webkit-box-shadow:inset 0px 0px 0px 5px black;
+  -moz-box-shadow:inset 0px 0px 0px 5px black;
+  font-family: "Comic Sans MS";
+}
