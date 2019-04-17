@@ -18,10 +18,7 @@
     }
 
     .chatMessage {
-      background-color: #d9b382;
-      border: solid;
-      border-radius: 25px;
-      border-width: thin;
+      font-family: "Comic Sans MS";
       margin: auto;
       padding: 5%;
       width: 85%;
@@ -29,6 +26,10 @@
 
     .chatMessageTitle{
       font-weight: bold;
+    }
+
+    .chatMessageText{
+      color: black;
     }
 
     .chatMessages {
@@ -93,14 +94,17 @@
   </div>
   <div class="chatWindow">
     <div class="chatMessages">
-      <p class="chatMessage" style="background-color: LightBlue;">
-        <span class="chatMessageTitle">Software Nerd</span>:<br>This is where chat messages will be!
+      <p class="chatMessage">
+        <span class="chatMessageTitle" style="color: Blue;">Software Nerd</span>:<br>This is where chat messages will be!
+        <hr>
       </p>
-      <p class="chatMessage" style="background-color: LightPink;">
-        <span class="chatMessageTitle">Writing Nerd</span>:<br>Here's another message!
+      <p class="chatMessage">
+        <span class="chatMessageTitle" style="color: #E75480;">Writing Nerd</span>:<br>Here's another message!
+        <hr>
       </p>
-      <p class="chatMessage" style="background-color: #B19CD9;">
-        <span class="chatMessageTitle">Logistics Nerd</span>:<br>Here's a third message!
+      <p class="chatMessage">
+        <span class="chatMessageTitle" style="color: #B19CD9;">Logistics Nerd</span>:<br>Here's a third message!
+        <hr>
       </p>
     </div>
     <textarea class="chatInput" placeholder="This is where chat input will be!"></textarea>
