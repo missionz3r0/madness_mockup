@@ -18,11 +18,17 @@
     }
 
     .chatMessage {
+      background-color: #d9b382;
       border: solid;
       border-radius: 25px;
+      border-width: thin;
       margin: auto;
       padding: 5%;
       width: 85%;
+    }
+
+    .chatMessageTitle{
+      font-weight: bold;
     }
 
     .chatMessages {
@@ -67,7 +73,9 @@
     }
 
     .slideout{
-
+      left: -80vw;
+      width: 80vw;
+      z-index: 2;
     }
   </style>
 
@@ -83,13 +91,13 @@
   <div class="chatWindow">
     <div class="chatMessages">
       <p class="chatMessage">
-        Software Nerd:<br>This is where chat messages will be!
+        <span class="chatMessageTitle">Software Nerd</span>:<br>This is where chat messages will be!
       </p>
       <p class="chatMessage">
-        Writing Nerd:<br>Here's another message!
+        <span class="chatMessageTitle">Writing Nerd</span>:<br>Here's another message!
       </p>
       <p class="chatMessage">
-        Logistics Nerd:<br>Here's a third message!
+        <span class="chatMessageTitle">Logistics Nerd</span>:<br>Here's a third message!
       </p>
     </div>
     <textarea class="chatInput" placeholder="This is where chat input will be!"></textarea>
