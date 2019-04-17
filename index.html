@@ -65,15 +65,18 @@
       background-color: black;
       color: white;
       cursor: pointer;
-      left: 0px;
+      left: 0vw;
       top: 50%;
       padding: 5px;
       position: fixed;
-      z-index: 2;
+      z-index: 3;
     }
 
     .slideout{
+      background: rgba(128,128,128,1);
+      height: 100vh;
       left: -80vw;
+      position: fixed;
       width: 80vw;
       z-index: 2;
     }
@@ -82,8 +85,8 @@
 </head>
 
 <body>
-  <input class="slideoutButton" type="button" onclick="toggleSlideout()" value=">">
-  <div class="slideout">
+  <input id="slideoutButton" class="slideoutButton" type="button" onclick="toggleSlideout()" value=">">
+  <div id="slideout" class="slideout">
   </div>
   <div class="mapWindow">
     <img id="map" class="map" src="https://cdn.discordapp.com/attachments/474415967745867777/555904974647721984/The_Temple_of_Migo_the_Fiendish_01_player.jpg">
@@ -107,6 +110,20 @@
 
 <script>
 function toggleSlideout(){
-  console.log("hello");
+
+  let slideoutButton = document.getElementById("slideoutButton");
+  let buttonPosition = slideoutButton.style.left;
+  let slideout = document.getElementById("slideout");
+  let position = slideout.style.left;
+
+  if(position === '0vw'){
+    slideout.style.left = '-80vw';
+    slideoutButton.style.left = '0vw';
+    slideoutButton.value = '>';
+  }else{
+    slideout.style.left = '0vw';
+    slideoutButton.style.left = '80vw';
+    slideoutButton.value = '<';
+  }
 }
 </script>
