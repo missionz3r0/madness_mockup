@@ -134,7 +134,7 @@
   <div id="slideout" class="slideout">
     <div class="slideoutContent">
       <div class="tab">
-        <button class="tablinks" onclick="openTab(event, 'Journal')">Journal</button>
+        <button id="defaultTab" class="tablinks" onclick="openTab(event, 'Journal')">Journal</button>
         <button class="tablinks" onclick="openTab(event, 'Rooms')">Rooms</button>
         <button class="tablinks" onclick="openTab(event, 'Settings')">Settings</button>
       </div>
@@ -195,7 +195,7 @@
   </div>
   <div class="rightBar">
     <div class="toolWindow">
-      <button style="max-width:100%;padding:0px;font-size:20px;"><i class="fas fa-dice"></i></button>
+      <button style="max-width:100%;padding:0px;font-size:20px;" title="This is a placeholder button, eventually all the tool buttons will go in this toolbar."><i class="fas fa-dice"></i></button>
     </div>
     <div class="chatWindow">
       <div class="chatMessages">
@@ -254,6 +254,8 @@ function openTab(evt, cityName) {
   document.getElementById(cityName).style.display = "block";
   evt.currentTarget.className += " active";
 }
+
+document.getElementById("defaultTab").click();
 
 document.getElementById('themeSwitch').onchange = function() {
   let value = this.value;
