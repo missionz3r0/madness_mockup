@@ -1,5 +1,9 @@
 body{
-  background-color: grey;
+  background-color: #404040;
+}
+
+.chatMessage {
+  font-family: "Helvetica";
 }
 
 .chatMessageText{
@@ -7,7 +11,7 @@ body{
 }
 
 .chatWindow {
-  background-color: grey;
+  background-color: #404040;
 }
 
 .slideoutButton{
@@ -16,13 +20,26 @@ body{
 }
 
 .slideout{
-  background: grey;
-  box-shadow:inset 0px 0px 0px 5px white;
-  -webkit-box-shadow:inset 0px 0px 0px 5px white;
-  -moz-box-shadow:inset 0px 0px 0px 5px white;
+  background: #404040;
+  box-shadow:inset 0px 0px 0px 5px #505050;
+  -webkit-box-shadow:inset 0px 0px 0px 5px #505050;
+  -moz-box-shadow:inset 0px 0px 0px 5px #505050;
   color: white;
 }
 
 .tab button {
+  color: white;
+}
+
+.tab button:hover {
+  background-color: #505050;
+}
+
+.tab button.active {
+  background-color: #696969;
+}
+
+.toolWindow {
+  background-color: #505050;
   color: white;
 }
