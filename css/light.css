@@ -1,3 +1,7 @@
+.chatMessage {
+  font-family: "Helvetica";
+}
+
 .chatMessageText{
   color: black;
 }
