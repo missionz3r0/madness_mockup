@@ -32,16 +32,20 @@
 
     .chatMessages {
       height: 85%;
-      width: 100%
+      width: 100%;
     }
 
     .chatWindow {
-      height: 100vh;
-      position: fixed;
-      right: 0px;
-      top: 0px;
-      width: 20vw;
-      z-index: 2;
+      float: left;
+      height: 100%;
+      /* Firefox */
+      width: -moz-calc(100% - 40px);
+      /* WebKit */
+      width: -webkit-calc(100% - 40px);
+      /* Opera */
+      width: -o-calc(100% - 40px);
+      /* Standard */
+      width: calc(100% - 40px);
     }
 
     .map {
@@ -57,6 +61,15 @@
       position: fixed;
       top: 0px;
       width: 80vw;
+    }
+
+    .rightBar{
+      height: 100vh;
+      position: fixed;
+      right: 0px;
+      top: 0px;
+      width: 20vw;
+      z-index: 2;
     }
 
     .slideoutButton{
@@ -98,24 +111,22 @@
       transition: 0.3s;
     }
 
-    /* Change background color of buttons on hover */
-    .tab button:hover {
-      background-color: #ddd;
-    }
-
-    /* Create an active/current tablink class */
-    .tab button.active {
-      background-color: #ccc;
-    }
-
     /* Style the tab content */
     .tabcontent {
       display: none;
       margin: 5px;
     }
+
+    .toolWindow {
+      float: left;
+      height: 100%;
+      position: relative;
+      width: 30px;
+    }
   </style>
 
   <link rel="stylesheet" href="css/dark.css" id="theme">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
 </head>
 
 <body>
@@ -128,13 +139,42 @@
         <button class="tablinks" onclick="openTab(event, 'Settings')">Settings</button>
       </div>
 
-      <!-- Tab content -->
       <div id="Journal" class="tabcontent">
         <p>This is the Journal</p>
+        <p>Todo:</p>
+        <ul>
+          <li>Character Sheets</li>
+          <li>Notes</li>
+          <li>Hand outs</li>
+        </ul>
+        <p>Todo for GMs:</p>
+        <ul>
+          <li>Copy Journal Items</li>
+        </ul>
       </div>
 
       <div id="Rooms" class="tabcontent">
         <p>This is where the list of rooms will be.</p>
+        <p>Todo:</p>
+        <ul>
+          <li>Room List</li>
+          <li>Room Description</li>
+          <li>Room Switching</li>
+          <li>Room quick view</li>
+        </ul>
+        <p>Todo for GMs:</p>
+        <ul>
+          <li>Edit Room Options</li>
+          <li>Room Options:
+            <ul>
+              <li>Room Name</li>
+              <li>Room Description</li>
+              <li>Room Sheets (Would like to be able to allow more than one sheet.)</li>
+              <li>GM list</li>
+              <li>Room Invites</li>
+            </ul>
+          </li>
+        </ul>
       </div>
 
       <div id="Settings" class="tabcontent">
@@ -144,25 +184,33 @@
             <option value="light">Light</option>
             <option value="sepia">Sepia</option>
         </select>
+        <p>Todo:</p>
+        <ul>
+        </ul>
       </div>
     </div>
   </div>
   <div class="mapWindow">
     <img id="map" class="map" src="https://cdn.discordapp.com/attachments/474415967745867777/555904974647721984/The_Temple_of_Migo_the_Fiendish_01_player.jpg">
   </div>
-  <div class="chatWindow">
-    <div class="chatMessages">
-      <p class="chatMessage">
-        <span class="chatMessageTitle" style="color: Blue;">Software Nerd:</span><br><span class='chatMessageText'>This is where chat messages will be!</span>
-      </p>
-      <p class="chatMessage">
-        <span class="chatMessageTitle" style="color: #E75480;">Writing Nerd:</span><br><span class='chatMessageText'>Here's another message!</span>
-      </p>
-      <p class="chatMessage">
-        <span class="chatMessageTitle" style="color: #B19CD9;">Logistics Nerd:</span><br><span class='chatMessageText'>Here's a third message!</span>
-      </p>
+  <div class="rightBar">
+    <div class="toolWindow">
+      <button style="max-width:100%;padding:0px;font-size:20px;"><i class="fas fa-dice"></i></button>
     </div>
-    <textarea class="chatInput" placeholder="This is where chat input will be!"></textarea>
+    <div class="chatWindow">
+      <div class="chatMessages">
+        <p class="chatMessage">
+          <span class="chatMessageTitle" style="color: lightblue;">Software Nerd:</span><br><span class='chatMessageText'>This is where chat messages will be!</span>
+        </p>
+        <p class="chatMessage">
+          <span class="chatMessageTitle" style="color: #E75480;">Writing Nerd:</span><br><span class='chatMessageText'>Here's another message!</span>
+        </p>
+        <p class="chatMessage">
+          <span class="chatMessageTitle" style="color: #B19CD9;">Logistics Nerd:</span><br><span class='chatMessageText'>Here's a third message!</span>
+        </p>
+      </div>
+      <textarea class="chatInput" placeholder="This is where chat input will be!"></textarea>
+    </div>
   </div>
 </body>
 </html>
