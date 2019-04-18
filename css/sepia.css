@@ -1,5 +1,5 @@
 body{
-  background-color: rgb(245, 245, 220);
+  background-color: #f5f5dc;
 }
 
 .chatMessage {
@@ -11,7 +11,7 @@ body{
 }
 
 .chatWindow {
-  background-color: rgb(245, 245, 220);
+  background-color: #f5f5dc;
 }
 
 .slideoutButton{
@@ -20,9 +20,24 @@ body{
 }
 
 .slideout{
-  background: rgb(245, 245, 220);
-  box-shadow:inset 0px 0px 0px 5px black;
-  -webkit-box-shadow:inset 0px 0px 0px 5px black;
-  -moz-box-shadow:inset 0px 0px 0px 5px black;
+  background: #f5f5dc;
+  box-shadow:inset 0px 0px 0px 5px #dbdbf5;
+  -webkit-box-shadow:inset 0px 0px 0px 5px #dbdbf5;
+  -moz-box-shadow:inset 0px 0px 0px 5px #dbdbf5;
   font-family: "Comic Sans MS";
+}
+
+.tab button {
+}
+
+.tab button:hover {
+  background-color: #dbdbf5;
+}
+
+.tab button.active {
+  background-color: #9f9fe4;
+}
+
+.toolWindow{
+  background-color: #dbdbf5;
 }
