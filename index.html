@@ -10,11 +10,21 @@
 
   <style>
     .chatInput {
+      -webkit-border-radius: 5px;
+      -moz-border-radius: 5px;
+      border-radius: 5px;
+      height: 85%;
+      display: block;
+      margin: 0 auto;
+      position: relative;
+      width: 90%;
+      z-index: 2;
+    }
+
+    .chatInputArea{
       bottom: 0px;
       height: 15%;
-      position: fixed;
       width: 100%;
-      z-index: 2;
     }
 
     .chatMessage {
@@ -209,7 +219,9 @@
           <span class="chatMessageTitle" style="color: #B19CD9;">Logistics Nerd:</span><br><span class='chatMessageText'>Here's a third message!</span>
         </p>
       </div>
-      <textarea class="chatInput" placeholder="This is where chat input will be!"></textarea>
+      <div class="chatInputArea">
+        <textarea class="chatInput" placeholder="This is where chat input will be!"></textarea>
+      </div>
     </div>
   </div>
 </body>
